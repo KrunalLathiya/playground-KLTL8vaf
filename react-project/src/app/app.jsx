@@ -1,20 +1,61 @@
-import React from 'react';
-import './app.css';
-import logo from './logo_og.png';
+// App.js
 
-export default class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            title: `[TECH.IO] React template`
-        };
-    }
-    render() {
-        return (<div>
-            <img className='logo' src={logo}></img>
-            <h1 className='title'>
-                {this.state.title}
-            </h1>
-        </div>);
-    }
+import React, { Component } from 'react';
+import StockList from './StockList';
+import UserList from './UserList';
+import Hoc from './HOC';
+
+const StocksData = [
+  {
+      id: 1,
+      name: 'TCS'
+        
+  },
+  {
+      id: 2,
+      name: 'Infosys'
+  },
+  {
+      id: 3,
+      name: 'Reliance'
+  }
+];
+const UsersData = [
+  {
+      id: 1,
+      name: 'Krunal'
+        
+  },
+  {
+      id: 2,
+      name: 'Ankit'
+  },
+  {
+      id: 3,
+      name: 'Rushabh'
+  }
+];
+
+const Stocks = Hoc(
+  StockList,
+  StocksData
+);
+
+const Users = Hoc(
+  UserList,
+  UsersData
+);
+
+
+class App extends Component {
+  
+  render() {
+    return (
+      <div>
+        <Users></Users>
+      </div>
+    )
+  }
 }
+
+export default App;
