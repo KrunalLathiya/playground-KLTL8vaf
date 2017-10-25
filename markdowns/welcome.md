@@ -86,16 +86,17 @@ class StockList extends Component {
         this.state = {
           stocks: [
             {
-                  name: 'TCS',
-                  price: 2500
+                id: 1,
+                name: 'TCS'
+                    
             },
             {
-                name: 'Infosys',
-                price: 990
+                id: 2,
+                name: 'Infosys'
             },
             {
-                name: 'HCL',
-                price: 800
+                id: 3,
+                name: 'Reliance'
             }
           ]
         };
@@ -140,10 +141,10 @@ class TableRow extends Component {
     return (
         <tr>
           <td>
-            {this.props.obj.name}
+            {this.props.obj.id}
           </td>
           <td>
-            {this.props.obj.price}
+            {this.props.obj.name}
           </td>
         </tr>
     );
@@ -419,4 +420,4 @@ In above, you can also write <Stocks></Stocks> in render() function. At that tim
 
 The primary use of <b>Higher-Order Component</b> is to enhance the reusability of particular components in multiple modules or components. We can also comprise various components to get improved components. Most of the third party libraries are using this feature to write another cool library.
 
-@[ReactJS Higher Order Components Tutorial]({"stubs": ["src/app/app.jsx", "src/main.js", "src/app/HOC.js", "src/app/StockList.js", "src/app/UserList.js"], "command": "./run.sh"})
+@[ReactJS Higher Order Components Tutorial]({"stubs": ["src/app/app.jsx", "src/main.js", "src/app/HOC.js", "src/app/StockList.js", "src/app/UserList.js", "src/app/TableRow.js"], "command": "./run.sh"})
